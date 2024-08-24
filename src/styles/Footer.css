@@ -1,0 +1,67 @@
+/* Ensure the footer spans the full width */
+.footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    left: 0; /* Start from the left edge */
+  }
+  
+  /* Remove max-width and margin to ensure full width */
+  .footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add padding to match the navbar */
+  }
+  
+  /* Style for the column containing vertical links */
+  .footer-column {
+    flex: 1;
+  }
+  
+  /* Vertical links styling */
+  .footer-vertical-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-vertical-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-vertical-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-vertical-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Horizontal links styling */
+  .footer-horizontal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .footer-horizontal-links li {
+    margin-left: 15px;
+  }
+  
+  .footer-horizontal-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-horizontal-links a:hover {
+    text-decoration: underline;
+  }
+  
