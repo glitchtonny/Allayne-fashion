@@ -1,0 +1,26 @@
+.shop-all {
+  padding: 30px;
+  margin: 10px;
+  /* background-image: url('https://static9.depositphotos.com/1003368/1158/i/450/depositphotos_11586491-stock-photo-woman-in-autumn-moscow-city.jpg'); */
+  background-color: antiquewhite;
+  border: 2px solid whitesmoke;
+}
+
+.cont {
+    padding: 30px;
+}
+
+.product-categories {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-section {
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
