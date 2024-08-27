@@ -12,9 +12,9 @@ body {
 /* Root container for centered content */
 #root {
   flex: 1; /* Allows content to grow and push the footer down */
-  max-width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  /* padding: 1rem; */
+  padding: 2rem;
   text-align: center;
   background-color: #ffffff;
   border-radius: 8px;
