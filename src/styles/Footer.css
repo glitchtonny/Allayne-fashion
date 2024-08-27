@@ -1,67 +1,69 @@
-/* Ensure the footer spans the full width */
+/* Ensure the footer spans the full width and is fixed at the bottom */
 .footer {
-    width: 100%;
-    background-color: #333;
+    /* position: fixed; Fixes the footer at the bottom of the viewport */
+    bottom: 0; /* Aligns it to the bottom */
+    left: 0; /* Aligns it to the left edge */
+    width: 100%; /* Ensures it spans the entire width */
+    background-color: #333; /* Dark background for contrast */
     color: white;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    left: 0; /* Start from the left edge */
-  }
-  
-  /* Remove max-width and margin to ensure full width */
-  .footer-container {
-    width: 100%;
+    padding: 20px 0; /* Padding for spacing */
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+/* Ensure the footer container takes full width without limiting it */
+.footer-container {
+    max-width: 1200px; /* Maximum width to center the content */
+    margin: 0 auto; /* Center the container horizontally */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Add padding to match the navbar */
-  }
-  
-  /* Style for the column containing vertical links */
-  .footer-column {
+    padding: 0 20px; /* Padding to match the navbar */
+}
+
+/* Style for the column containing vertical links */
+.footer-column {
     flex: 1;
-  }
-  
-  /* Vertical links styling */
-  .footer-vertical-links {
+}
+
+/* Vertical links styling */
+.footer-vertical-links {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .footer-vertical-links li {
+}
+
+.footer-vertical-links li {
     margin-bottom: 10px;
-  }
-  
-  .footer-vertical-links a {
+}
+
+.footer-vertical-links a {
     color: white;
     text-decoration: none;
-  }
-  
-  .footer-vertical-links a:hover {
+}
+
+.footer-vertical-links a:hover {
     text-decoration: underline;
-  }
-  
-  /* Horizontal links styling */
-  .footer-horizontal-links {
+}
+
+/* Horizontal links styling */
+.footer-horizontal-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: flex-end;
-  }
-  
-  .footer-horizontal-links li {
+}
+
+.footer-horizontal-links li {
     margin-left: 15px;
-  }
-  
-  .footer-horizontal-links a {
+}
+
+.footer-horizontal-links a {
     color: white;
     text-decoration: none;
-  }
-  
-  .footer-horizontal-links a:hover {
+}
+
+.footer-horizontal-links a:hover {
     text-decoration: underline;
-  }
-  
+}

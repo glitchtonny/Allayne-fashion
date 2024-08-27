@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../styles/SignupPage.css';
 
 function SignupPage() {
@@ -30,7 +31,7 @@ function SignupPage() {
 
   return (
     <div className="signin-container">
-      <h2>Sign In</h2>
+      <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
@@ -80,7 +81,12 @@ function SignupPage() {
           />
         </div>
 
-        <button type="submit" className="signin-button">Sign In</button>
+        <button type="submit" className="signin-button">Sign Up</button>
+
+        <div className="makeblack">
+          Already have an account?{' '}
+          <Link to="/login">Login</Link>
+        </div>
       </form>
     </div>
   );

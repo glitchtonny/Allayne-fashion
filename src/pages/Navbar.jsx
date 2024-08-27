@@ -14,7 +14,7 @@ function Navbar({ isLoggedIn }) {
           {isLoggedIn ? (
             <Link to="/account">Account</Link>
           ) : (
-            <Link to="/login">Login/Signup</Link>
+            <Link to="/login">Login</Link>
           )}
         </li>
       </ul>

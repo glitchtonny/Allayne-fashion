@@ -25,6 +25,7 @@ nav {
     margin: 0;
     padding: 0;
     display: flex; /* Use flexbox for the links */
+    padding-right: 30px;
   }
   
   .nav-links li {
