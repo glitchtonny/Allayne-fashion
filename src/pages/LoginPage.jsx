@@ -3,19 +3,40 @@ import { useNavigate, Link } from 'react-router-dom';
 import '../styles/LoginPage.css';
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState(''); // Changed to username
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Dummy authentication logic (replace with actual authentication logic)
-    if (email === 'user@example.com' && password === 'password') {
-      // Redirect to account page upon successful login
-      navigate('/account');
-    } else {
-      alert('Invalid email or password');
+    try {
+      const response = await fetch('http://127.0.0.1:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username, // Send username instead of email
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Save the token and user info, if needed
+        localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('user', JSON.stringify({ id: data.id, username: data.username, role: data.role }));
+        
+        // Redirect to the account page upon successful login
+        navigate('/account');
+      } else {
+        alert(data.message || 'Invalid credentials');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred. Please try again.');
     }
   };
 
@@ -24,12 +45,12 @@ const LoginPage = () => {
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="username">Username:</label>
           <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text" // Changed to text
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
         </div>
