@@ -1,0 +1,47 @@
+/* Ensure the navbar spans the full width of the viewport */
+nav {
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Padding inside the navbar */
+    width: 100vw; /* Use 100% of the viewport width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Position the navbar at the top */
+    left: 0; /* Start from the left edge */
+    z-index: 1000; /* Ensure the navbar is on top of other elements */
+  }
+  
+  .nav-logo {
+    color: white; /* Logo text color */
+    font-size: 24px; /* Logo font size */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold text for emphasis */
+  }
+  
+  .nav-links {
+    list-style: none; /* Remove bullets from list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for the links */
+    padding-right: 30px;
+  }
+  
+  .nav-links li {
+    margin-left: 20px; /* Space between links */
+  }
+  
+  .nav-links li a, .nav-links li button {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .nav-links li a:hover, .nav-links li button:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
