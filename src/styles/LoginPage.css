@@ -1,0 +1,67 @@
+/* Center the login form on the page */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto; /* Centers the container horizontally and adds vertical space */
+    padding: 20px;
+    background-color: #fff; /* White background for the form */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: wheat; /* Subtle shadow for depth */
+  }
+  
+  .login-container h2 {
+    text-align: center; /* Center align the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Dark gray text color */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Space between form elements */
+    color: #333;
+  }
+  
+  .form-group label {
+    display: block; /* Ensure labels are block elements */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold text for labels */
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    background-color: #f9f9f9; /* Ensure a light background color */
+    color: #333; /* Dark text color */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+  }
+  
+  .form-group input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.25); /* Subtle shadow on focus */
+    background-color: #ffffff; /* Ensure the background stays white when focused */
+  }
+  
+  
+  .login-button {
+    width: 100%; /* Full width of the container */
+    padding: 10px; /* Space inside the button */
+    background-color: #007bff; /* Primary blue color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Larger text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .makeblack{
+    color: #333; /* Dark text color */
+
+  }

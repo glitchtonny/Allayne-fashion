@@ -1,42 +1,89 @@
-/* #root {
+
+
+/* Body styling */
+body {
+  background-color: #f9f9f9;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full height for flexbox alignment */
+}
+
+/* Root container for centered content */
+#root {
+  flex: 1; /* Allows content to grow and push the footer down */
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Full-width styling for navbar and footer */
+.navbar,
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px; /* Padding to match the centered content */
+  box-sizing: border-box; /* Ensure padding does not affect width */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  margin-top: auto; /* Push the footer to the bottom if there's less content */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Navbar-specific styling */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Aligns navbar items to the right */
 }
 
-.card {
-  padding: 2em;
+.navbar ul li {
+  margin-left: 15px;
 }
 
-.read-the-docs {
-  color: #888;
-} */
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer styling */
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Columns with space in between */
+  align-items: center;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-vertical-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-vertical-links li {
+  margin-bottom: 10px;
+}
+
+.footer-horizontal-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-horizontal-links li {
+  margin-left: 15px;
+}
