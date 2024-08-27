@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './pages/Navbar';
+import ShopAll from './Components/ShopAll';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import AccountPage from './pages/AccountPage';
@@ -18,6 +20,7 @@ function App() {
       <div className="content">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<ShopAll />} />
           <Route path="/product" element={<ProductForm />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/account" element={<AccountPage />} />
@@ -31,3 +34,4 @@ function App() {
 }
 
 export default App;
+
