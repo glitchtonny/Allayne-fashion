@@ -111,8 +111,7 @@ const ShopAll = () => {
         const productsData = {};
 
         for (const category of categoriesData) {
-          const productsRes = await axios.get(`http://127.0.0.1:5000/api/categories/${category.id}/products`)
-          ;
+          const productsRes = await axios.get(`http://127.0.0.1:5000/api/categories/${category.id}/products`);
           productsData[category.id] = productsRes.data;
         }
 
@@ -141,10 +140,31 @@ const ShopAll = () => {
 
     setProductsByCategory(filteredData);
   };
+  
+  const handleAddToCart = async (product) => {
+    try {
+        const response = await axios.post('http://127.0.0.1:5000/cart', 
+            {
+                product_id: product.id,
+                quantity: 1
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            }
+        );
 
-  const handleAddToCart = (product) => {
-    setCart([...cart, product]);
-  };
+        const updatedCart = [...cart, { ...product, quantity: 1 }];
+        setCart(updatedCart);
+
+        alert('Product added to cart successfully!');
+    } catch (error) {
+        console.error('Error adding product to cart:', error.response ? error.response.data : error.message);
+        alert('Failed to add product to cart.');
+    }
+};
 
   return (
     <div className='cont'>
@@ -178,7 +198,6 @@ const ShopAll = () => {
       </div>
     </div>
     </div>
-
   );
 };
 

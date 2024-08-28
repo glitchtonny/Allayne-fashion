@@ -1,7 +1,7 @@
 
 /* Body styling */
 body {
-  background-color: #f9f9f9;
+  background-color: #f0e9e9;
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
@@ -10,79 +10,14 @@ body {
 }
 
 /* Root container for centered content */
-#root {
-  flex: 1; /* Allows content to grow and push the footer down */
-  max-width: 1280px;
+/* #root {
+  flex: 1; 
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 
-/* Full-width styling for navbar and footer */
-.navbar,
-.footer {
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 10px 20px; /* Padding to match the centered content */
-  box-sizing: border-box; /* Ensure padding does not affect width */
-}
-
-.footer {
-  margin-top: auto; /* Push the footer to the bottom if there's less content */
-}
-
-/* Navbar-specific styling */
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end; /* Aligns navbar items to the right */
-}
-
-.navbar ul li {
-  margin-left: 15px;
-}
-
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.navbar ul li a:hover {
-  text-decoration: underline;
-}
-
-/* Footer styling */
-.footer-container {
-  display: flex;
-  justify-content: space-between; /* Columns with space in between */
-  align-items: center;
-}
-
-.footer-column {
-  flex: 1;
-}
-
-.footer-vertical-links {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-vertical-links li {
-  margin-bottom: 10px;
-}
-
-.footer-horizontal-links {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.footer-horizontal-links li {
-  margin-left: 15px;
-}

@@ -27,10 +27,16 @@ const LoginPage = () => {
       if (response.ok) {
         // Save the token and user info, if needed
         localStorage.setItem('access_token', data.access_token);
-        localStorage.setItem('user', JSON.stringify({ id: data.id, username: data.username, role: data.role }));
+        localStorage.setItem('user', JSON.stringify({ 
+          id: data.id, 
+          username: data.username,
+          email: data.email, 
+          phoneNumber: data.phoneNumber, 
+          role: data.role
+         }));
         
         // Redirect to the account page upon successful login
-        navigate('/account');
+        navigate('/userDashboard');
       } else {
         alert(data.message || 'Invalid credentials');
       }

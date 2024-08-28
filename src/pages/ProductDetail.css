@@ -1,7 +1,7 @@
 .product-container {
   display: flex;
   align-items: center;
-  border: 2px solid #0073e6; /* Blue border */
+  border: 2px solid #0073e6; 
   border-radius: 8px;
   padding: 20px;
   max-width: 800px;
