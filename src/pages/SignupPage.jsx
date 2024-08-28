@@ -23,12 +23,12 @@ function SignupPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match');
       return;
     }
-
+  
     try {
       const response = await fetch('http://127.0.0.1:5000/register', {
         method: 'POST',
@@ -40,20 +40,30 @@ function SignupPage() {
           email: formData.email,
           password: formData.password,
           phoneNumber: formData.phoneNumber,
-          role: 'customer' // Default role
+          role: 'customer'
         }),
       });
-
-      const data = await response.json();
-
+  
+      console.log('Response Status:', response.status);
+      console.log('Response Headers:', response.headers);
+  
+      let data;
+      try {
+        data = await response.json();
+      } catch (error) {
+        throw new Error('Response is not valid JSON');
+      }
+  
+      console.log('Response Data:', data);
+  
       if (response.ok) {
         alert('User registered successfully');
-        navigate('/'); // Redirect to home page
+        navigate('/userDashboard');
       } else {
-        alert(`Registration failed: ${data.message}`);
+        alert(`Registration failed: ${data.message || 'Unknown error'}`);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error during registration:', error);
       alert('An error occurred during registration');
     }
   };
