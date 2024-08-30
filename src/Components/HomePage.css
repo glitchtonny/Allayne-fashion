@@ -1,38 +1,48 @@
 /* HomePage.css */
 .homepage-container {
   width: 100%;
-  margin: 0 auto;
+  margin-top: 40px;
   text-align: center;
 }
 
 .hero-section {
   position: relative;
-  background-color: #f8f8f8; /* Background color instead of an image */
+  background-color: #f8f4f4; 
   padding: 50px 20px;
 }
 
 .hero-image {
-  width: 100%;
-  height: 700px;
+  width: 90%;
+  height: 500px;
 }
 
 .hero-text {
-  position: relative; /* Position relative for centered text */
-  color: #fff;
-  text-align: center;
+  position: absolute; /* Position relative for centered text */
+  top: 20%;
+  right: 15%;
+  text-align: right;
   z-index: 2;
 }
 
 .hero-text h1 {
   font-size: 48px;
   margin: 0;
-  color: #800080; /* Dark purple color */
+  color: #f110f1;
+  font-family: 'Cursive', sans-serif;
+  font-style: italic;
 }
 
+.hero-text h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  font-weight: 600;
+  font-family: 'Cursive', sans-serif;
+  color: #f110f1;
+}
 .hero-text p {
   font-size: 24px;
   margin: 10px 0 0 0;
-  color: #800080; /* Dark purple color */
+  color: #f17240; 
 }
 
 .categories-section {

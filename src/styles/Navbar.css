@@ -5,8 +5,8 @@
   /* Navbar.css */
 
   nav {
-    background-color: #eee2e2; /* Dark background color */
-    padding: 10px 20px; /* Padding inside the navbar */
+    background-color: #a19e9e; 
+    padding: 10px 20px; 
     width: 100%; /* Use 100% of the viewport width */
     box-sizing: border-box; /* Include padding in the width calculation */
     display: flex; /* Use flexbox for layout */
@@ -15,7 +15,7 @@
     position: absolute; /* Fix the navbar at the top */
     top: 0; /* Position the navbar at the top */
     left: 0; /* Start from the left edge */
-    z-index: 1000; /* Ensure the navbar is on top of other elements */
+    z-index: 1000; 
   }
 
 .nav-logo img {

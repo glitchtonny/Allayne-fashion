@@ -6,19 +6,20 @@
 }
 
 .trending-fits-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 2.6rem;
+  text-decoration: underline overline;
+  font-weight: 900;
   margin-top: 0px;
   margin-bottom: 40px;
-  color: #333;
+  color: #0a0a0a;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 15px;
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #eee6ee, 0 0 30px #db43db, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #eee6ee, 0 0 30px #f8f7f8, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
   }
   to {
     text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
