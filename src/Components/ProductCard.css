@@ -1,6 +1,6 @@
 .product-card {
-    width: 220px;
-    padding: 16px;
+    width: 210px;
+    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -59,7 +59,7 @@
     padding: 8px 16px;
     font-size: 1rem;
     color: #fff;
-    background-color: #007bff;
+    background-color: #dd35d5;
     border: none;
     border-radius: 4px;
     cursor: pointer;

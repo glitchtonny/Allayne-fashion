@@ -1,9 +1,9 @@
 /* Center the login form on the page */
 .login-container {
-    max-width: 400px;
+    max-width: 100%;
     margin: 50px auto; /* Centers the container horizontally and adds vertical space */
     padding: 20px;
-    background-color: #fff; /* White background for the form */
+    background-color: #e4dfdf; /* White background for the form */
     border: 1px solid #ddd; /* Light gray border */
     border-radius: 8px; /* Rounded corners */
     box-shadow: wheat; /* Subtle shadow for depth */

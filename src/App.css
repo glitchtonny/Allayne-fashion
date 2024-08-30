@@ -1,23 +1,12 @@
-
-/* Body styling */
 body {
-  background-color: #f0e9e9;
-  margin: 0;
+  background-color: #f9f9f9;
+  /* margin: 10px; */
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure full height for flexbox alignment */
+  min-height: 100vh;
 }
 
-/* Root container for centered content */
-/* #root {
-  flex: 1; 
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
-
+.content{
+  width: 100%;
+}

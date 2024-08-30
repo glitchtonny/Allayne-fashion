@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import '../styles/LoginPage.css';
 
 const LoginPage = () => {
-  const [username, setUsername] = useState(''); // Changed to username
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const LoginPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username, // Send username instead of email
+          username,
           password,
         }),
       });
@@ -25,18 +25,21 @@ const LoginPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Save the token and user info, if needed
         localStorage.setItem('access_token', data.access_token);
-        localStorage.setItem('user', JSON.stringify({ 
-          id: data.id, 
+        localStorage.setItem('user', JSON.stringify({
+          id: data.id,
           username: data.username,
-          email: data.email, 
-          phoneNumber: data.phoneNumber, 
-          role: data.role
-         }));
-        
-        // Redirect to the account page upon successful login
-        navigate('/userDashboard');
+          email: data.email,
+          phoneNumber: data.phoneNumber,
+          role: data.role,
+        }));
+
+        // Redirect based on user role
+        if (data.role === 'admin') {
+          navigate('/AdminDashboard');
+        } else {
+          navigate('/UserDashboard');
+        }
       } else {
         alert(data.message || 'Invalid credentials');
       }
@@ -53,7 +56,7 @@ const LoginPage = () => {
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
-            type="text" // Changed to text
+            type="text"
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}

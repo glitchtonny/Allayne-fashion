@@ -1,7 +1,6 @@
-//product.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/ProductForm.css'; 
+import './product.css'; 
 
 const ProductForm = () => {
   const [name, setName] = useState('');
@@ -10,16 +9,26 @@ const ProductForm = () => {
   const [imageURL, setImageURL] = useState('');
   const [category, setCategory] = useState('');
   const [errors, setErrors] = useState({});
+  
+  // Mapping of category names to category IDs
+  const categoryMapping = {
+    denims: 1,
+    dresses: 2,
+    tops: 3,
+    bottoms: 4,
+    shoes: 5,
+    matching_sets: 6
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('/api/products', {
+      const response = await axios.post('http://127.0.0.1:5000/products', {
         name,
         description,
         price,
         imageURL,
-        category,
+        category_id: categoryMapping[category] // Use category ID
       });
       console.log(response.data);
       // Reset form fields
@@ -29,53 +38,62 @@ const ProductForm = () => {
       setImageURL('');
       setCategory('');
     } catch (error) {
-      setErrors(error.response.data.errors);
-    }
-  };
-
-  const handleRemove = async (productId) => {
-    try {
-      const response = await axios.delete(`/api/products/${productId}`);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
+      setErrors(error.response.data.errors || { general: 'An error occurred' });
     }
   };
 
   return (
-    <div>
-      <h1 className='black'>Add Product</h1>
+    <div className="product-form">
+      <h1>Add Product</h1>
       <form onSubmit={handleSubmit}>
-        <label className='black'>
+        <label>
           Name:
-          <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
+          <input 
+            type="text" 
+            value={name} 
+            onChange={(event) => setName(event.target.value)} 
+          />
         </label>
         <br />
-        <label className='black'>
+        <label>
           Description:
-          <textarea value={description} onChange={(event) => setDescription(event.target.value)} />
+          <textarea 
+            value={description} 
+            onChange={(event) => setDescription(event.target.value)} 
+          />
         </label>
         <br />
-        <label className='black'>
+        <label>
           Price:
-          <input type="number" value={price} onChange={(event) => setPrice(event.target.value)} />
-        </label >
-        <br />
-        <label className='black'>
-          Image URL:
-          <input type="text" value={imageURL} onChange={(event) => setImageURL(event.target.value)} />
+          <input 
+            type="number" 
+            value={price} 
+            onChange={(event) => setPrice(Number(event.target.value))} 
+          />
         </label>
         <br />
-        <label className='black'>
+        <label>
+          Image URL:
+          <input 
+            type="text" 
+            value={imageURL} 
+            onChange={(event) => setImageURL(event.target.value)} 
+          />
+        </label>
+        <br />
+        <label>
           Category:
-          <select value={category} onChange={(event) => setCategory(event.target.value)}>
+          <select 
+            value={category} 
+            onChange={(event) => setCategory(event.target.value)}
+          >
             <option value="">Select a category</option>
             <option value="denims">Denims</option>
             <option value="dresses">Dresses</option>
             <option value="tops">Tops</option>
             <option value="bottoms">Bottoms</option>
             <option value="shoes">Shoes</option>
-            <option value="matching-sets">Matching Sets</option>
+            <option value="matching_sets">Matching Sets</option>
           </select>
         </label>
         <br />

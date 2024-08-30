@@ -1,9 +1,12 @@
 /* UserDashboard.css */
-
+body{
+   place-items: center;
+}
 .container {
   display: flex;
   /* height: 100vh; */
   padding-top: 100px;
+   /* place-items: center; */
   width: 1000px;
   height: 500px;
 }

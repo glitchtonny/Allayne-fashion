@@ -1,15 +1,15 @@
 .shop-all {
-  padding: 30px;
+  padding: 20px;
   margin: 10px;
   /* background-image: url('https://static9.depositphotos.com/1003368/1158/i/450/depositphotos_11586491-stock-photo-woman-in-autumn-moscow-city.jpg'); */
   background-color: hwb(303 39% 0%);
-  border: 2px solid whitesmoke;
+  border: 1px solid whitesmoke;
   
 }
 
 .cont {
     padding: 30px;
-    padding-top: 60px;
+    padding-top: 100px;
 }
 
 .product-categories {

@@ -1,0 +1,58 @@
+/* TrendingFits.css */
+
+.trending-fits-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.trending-fits-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #eee6ee, 0 0 30px #db43db, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+  }
+}
+
+.trending-fits-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 40px; /* Space between cards */
+}
+
+.trending-fit-card {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.trending-fit-card:hover {
+  transform: translateY(-5px);
+}
+
+.trending-fit-image {
+  width: 80%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.trending-fit-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 10px 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

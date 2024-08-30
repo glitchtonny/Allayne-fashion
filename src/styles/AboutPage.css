@@ -1,38 +1,59 @@
+/* AboutPage.css */
 .about-container {
-  max-width: 1200px;
-  margin: 60px auto; /* Increased margin for better spacing */
-  padding: 40px 20px; /* Added padding for breathing room */
-  background-color: #fff; /* Darker background for contrast */
-  border-radius: 10px; /* Rounded corners for a softer look */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 80%;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background-color: #fef0f8; /* Light pink background for a girly touch */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
+  color: #333; /* Dark text for readability */
 }
 
 .about-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Space between content and image */
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 60px; /* Reduced margin for better balance */
+  margin-bottom: 60px;
+  background-color: #ffffff; /* White background for content sections */
+  border: 2px solid #ffccda; /* Soft pink border for a stylish look */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .about-content {
-  flex-basis: 48%; /* Reduced width for better spacing */
+  flex-basis: 48%;
   padding: 20px;
   margin: 0;
-  text-align: left; /* Align text to the left */
+  text-align: left;
+  font-family: 'Poppins', sans-serif; /* Elegant font for text */
+  color: #333333; /* Dark grey for readability */
+}
+
+h2, h3, h4 {
+  color: #0f0f0f; /* Bright pink for headings */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+p {
+  color: #2c2c2c; 
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1rem; 
 }
 
 .about-image {
   flex-basis: 48%;
-  height: 350px; /* Slightly increased height for emphasis */
+  height: 400px;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Added shadow for image depth */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .about-image:first-child {
@@ -43,27 +64,14 @@
   background-image: url('src/images/WhatsApp Image 2024-08-22 at 9.45.04 AM.jpeg');
 }
 
-h2, h3, h4 {
-  color: #333; /* Ensure headings are white for better readability */
-  margin-bottom: 20px; /* Increased spacing for visual hierarchy */
-  font-weight: 700; /* Bold headings for emphasis */
-}
-
-p {
-  color: #2c2c2c; /* Softer text color for readability */
-  margin-bottom: 20px;
-  line-height: 1.6; /* Increased line-height for better readability */
-  font-size: 1.1rem; /* Slightly larger font size */
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .about-section {
-      flex-direction: column; /* Stack content and image vertically */
+    flex-direction: column;
   }
 
   .about-content, .about-image {
-      flex-basis: 100%;
-      margin-bottom: 20px; /* Add spacing between stacked elements */
+    flex-basis: 100%;
+    margin-bottom: 20px;
   }
 }
