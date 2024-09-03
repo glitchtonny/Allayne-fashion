@@ -22,14 +22,33 @@ const ProductForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Get token from local storage
+    const token = localStorage.getItem('access_token');
+    console.log(token)
+
+
+    if (!token) {
+      setErrors({ general: 'Authorization token is missing.' });
+      return;
+    }
+
     try {
-      const response = await axios.post('http://127.0.0.1:5000/products', {
-        name,
-        description,
-        price,
-        imageURL,
-        category_id: categoryMapping[category] // Use category ID
-      });
+      const response = await axios.post(
+        'http://127.0.0.1:5000/products',
+        {
+          name,
+          description,
+          price,
+          imageURL,
+          category_id: categoryMapping[category] // Use category ID
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}` // Include the token in the Authorization header
+          }
+        }
+      );
       console.log(response.data);
       // Reset form fields
       setName('');
@@ -37,6 +56,7 @@ const ProductForm = () => {
       setPrice(0);
       setImageURL('');
       setCategory('');
+      setErrors({});
     } catch (error) {
       setErrors(error.response.data.errors || { general: 'An error occurred' });
     }

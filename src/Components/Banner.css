@@ -3,6 +3,8 @@
     height: 550px; /* Adjust height as needed */
     overflow: hidden;
     background-color: rgb(231, 198, 230);
+    border: 2px solid rgb(19, 18, 18, 0.1);
+
   }
   
   .banner-images {

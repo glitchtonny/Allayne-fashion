@@ -54,28 +54,31 @@ const ShopAll = () => {
     setProductsByCategory(filteredData);
   };
   
-  const handleAddToCart = async (productId, quantity) => {
+  const handleAddToCart = async (product) => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/cart', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-        },
-        body: JSON.stringify({
-          product_id: productId,
-          quantity: quantity
-        })
+      console.log('Adding to cart:', {
+        product_id: product.id,
+        quantity: 1,
       });
   
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
-  
-      const data = await response.json();
-      console.log('Success:', data);
+      const res = await axios.post(
+        'http://127.0.0.1:5000/cart',
+        {
+          product_id: product.id,
+          quantity: 1,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem('access_token')}`
+          }
+        }
+      );
+      alert('Product added to cart successfully!');
     } catch (error) {
+      console.log(error);
       console.error('Error adding to cart:', error);
+      alert('Failed to add product to cart. Please try again.');
     }
   };
   
@@ -91,7 +94,7 @@ const ShopAll = () => {
         'https://img.freepik.com/free-photo/fashion-photo-graceful-brunette-woman-spring-outfit-posing-holding-white-bag_273443-4124.jpg',
         'https://cdn.dribbble.com/users/9355434/screenshots/17357989/media/03ed746ec611b7a7eda3ecbc64a9f528.jpg?resize=400x0',
         'https://cdn.create.vista.com/downloads/bd6cf32a-34ed-4568-aa85-53b0e84aa3ea_1024.jpeg',
-        'https://www.stylerave.com/wp-content/uploads/2022/02/0FC53C4C-1C59-44AC-BC45-EE899BEE906E.jpeg',
+        'https://assets.vogue.com/photos/6334721ef28c35bd8f883442/16:9/w_992,h_558,c_limit/00-promo.jpg',
         'https://img.freepik.com/free-photo/good-humoured-young-girl-white-gumshoes-posing-with-ice-cream-serious-lady-beret-sitting-floor-eating-dessert_197531-20451.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1720915200&semt=ais_user',
         'https://images.indianexpress.com/2019/10/short-girl-dressing-tips.jpg?w=414'
         

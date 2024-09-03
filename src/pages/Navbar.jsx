@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 function Navbar({ isLoggedIn }) {
-  // Retrieve the user data from localStorage
+  
   const user = isLoggedIn ? JSON.parse(localStorage.getItem('user')) : null;
 
   return (
     <nav>
       <Link to="/" className="nav-logo">
+      {/* <h4>Allayne</h4> */}
+
         <img src="src/images/allayne0-removebg-preview.png" alt="Logo" />
       </Link>
       <ul className="nav-links">
@@ -17,7 +19,7 @@ function Navbar({ isLoggedIn }) {
         <li><Link to="/about">About</Link></li>
         <li>
           {isLoggedIn ? (
-            <Link to={user?.role === 'admin' ? '/AdminDashboard' : '/UserDashboard'}>
+            <Link to={user?.role === 'admin' ? '/admin-dashboard' : '/UserDashboard'}>
               <img 
                 src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" 
                 alt="User Dashboard" 

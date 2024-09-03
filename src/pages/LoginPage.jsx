@@ -26,6 +26,8 @@ const LoginPage = () => {
 
       if (response.ok) {
         localStorage.setItem('access_token', data.access_token);
+        console.log('JWT:', localStorage.getItem('access_token'));
+
         localStorage.setItem('user', JSON.stringify({
           id: data.id,
           username: data.username,
@@ -36,9 +38,11 @@ const LoginPage = () => {
 
         // Redirect based on user role
         if (data.role === 'admin') {
-          navigate('/AdminDashboard');
+          navigate('/admin-dashboard');
+          window.location.reload();
         } else {
           navigate('/UserDashboard');
+          window.location.reload();
         }
       } else {
         alert(data.message || 'Invalid credentials');

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './AdminProductList.css'; // Import the CSS file
+import './AdminProductList.css'; 
 
 const AdminProductList = () => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState('');
 
     // Fetch all products when the component loads
+    
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -14,7 +15,7 @@ const AdminProductList = () => {
         try {
             const response = await fetch('http://127.0.0.1:5000/products', {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming JWT token is stored in localStorage
+                    Authorization: `Bearer ${localStorage.getItem('access_token')}` 
                 }
             });
 
@@ -34,8 +35,9 @@ const AdminProductList = () => {
             const response = await fetch(`http://127.0.0.1:5000/products/${productId}`, {
                 method: 'DELETE',
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                    Authorization: `Bearer ${localStorage.getItem('access_token')}`
                 }
+               
             });
 
             if (!response.ok) {
@@ -44,6 +46,7 @@ const AdminProductList = () => {
 
             // Remove deleted product from the state
             setProducts(products.filter(product => product.id !== productId));
+            alert("Successfully deleted")
         } catch (err) {
             setError(err.message);
         }

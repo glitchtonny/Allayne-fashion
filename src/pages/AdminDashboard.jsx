@@ -108,7 +108,7 @@ function AdminDashboard() {
           <div className="profile-details">
             <div>Name: {user.username}</div>
             <div>Email: {user.email}</div>
-            <div>Phone Number: {user.phone_number}</div>
+            {/* <div>Phone Number: {user.phone_number}</div> */}
           </div>
         </div>
         <button className="logout-btn" onClick={handleLogout}>

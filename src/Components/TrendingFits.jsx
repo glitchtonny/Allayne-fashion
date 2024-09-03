@@ -25,7 +25,7 @@ const TrendingFits = () => {
       setActiveIndices((prevIndices) =>
         prevIndices.map(index => (index + 1) % products.length)
       );
-    }, 3000); // Change image every 3 seconds
+    }, 2000); 
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [products.length]);
@@ -36,11 +36,11 @@ const TrendingFits = () => {
       <div className="trending-fits-container">
         {activeIndices.map((index) => (
           <div key={products[index]?.id || index} className="trending-fit-card">
-            <img
+            <a href='/shop'><img
               src={products[index]?.image_url}
               alt={products[index]?.name || 'Product Image'}
               className="trending-fit-image"
-            />
+            /></a>
             <h3 className="trending-fit-name">
               {products[index]?.name || 'Loading...'}
             </h3>

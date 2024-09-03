@@ -5,7 +5,7 @@
   /* Navbar.css */
 
   nav {
-    background-color: #a19e9e; 
+    background-color: #a19ea1; 
     padding: 10px 20px; 
     width: 100%; /* Use 100% of the viewport width */
     box-sizing: border-box; /* Include padding in the width calculation */
@@ -15,7 +15,7 @@
     position: absolute; /* Fix the navbar at the top */
     top: 0; /* Position the navbar at the top */
     left: 0; /* Start from the left edge */
-    z-index: 1000; 
+    z-index: 100; 
   }
 
 .nav-logo img {
@@ -23,10 +23,15 @@
   width: 70px;
 }
 
+.nav-logo h4{
+  display: inline;
+
+}
+
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .nav-links li {
@@ -34,14 +39,16 @@
 }
 
 .nav-links a {
-  color: rgb(12, 10, 12);
-  text-decoration: none;
-  font-size: 16px;
+  color: rgb(16, 10, 12);
+  text-decoration:none;
+  font-size: 17px;
+  font-weight: 900;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #ff4c4c;
+  text-decoration: underline  overline;
 }
 
 .user-icon {

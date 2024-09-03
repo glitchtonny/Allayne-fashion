@@ -19,7 +19,7 @@
   align-items: center;
   margin-bottom: 60px;
   background-color: #ffffff; /* White background for content sections */
-  border: 2px solid #ffccda; /* Soft pink border for a stylish look */
+  border: 2px solid rgb(225, 145, 237, 0.3); /* Soft pink border for a stylish look */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -35,16 +35,17 @@
 }
 
 h2, h3, h4 {
-  color: #0f0f0f; /* Bright pink for headings */
+  color: #b42ab4; /* Bright pink for headings */
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 p {
-  color: #2c2c2c; 
+  color: #464646; 
   margin-bottom: 20px;
   line-height: 1.6;
-  font-size: 1.1rem; 
+  font-size: 1.2rem; 
+  font-weight: 900;
 }
 
 .about-image {

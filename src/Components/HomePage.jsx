@@ -16,7 +16,7 @@ const HomePage = () => {
         <div className="hero-text">
         <h1>Allayne Fashion</h1>
           <h2>Merging Style with Elegance</h2>
-          <p>Unique Women Fashion</p>
+          <p>Unique Women's Fashion</p>
           <p></p>
         </div>
       </div>
@@ -31,7 +31,7 @@ const HomePage = () => {
               alt="Kurtis"
               className="category-image"
             />
-            <p>Kurtis</p>
+            <p>Denims</p>
           </div>
           <div className="category-item">
             <img
@@ -39,23 +39,23 @@ const HomePage = () => {
               alt="Tops"
               className="category-image"
             />
+            <p>Dresses</p>
+          </div>
+          <div className="category-item">
+            <img
+              src="https://img.freepik.com/premium-vector/online-shop-neon-signs-vector-design-template-neon-style_77399-1178.jpg" 
+              alt="Jeans"
+              className="category-image"
+            />
             <p>Tops</p>
           </div>
           <div className="category-item">
             <img
               src="https://img.freepik.com/premium-vector/online-shop-neon-signs-vector-design-template-neon-style_77399-1178.jpg" 
-              alt="Jeans"
-              className="category-image"
-            />
-            <p>Jeans</p>
-          </div>
-          <div className="category-item">
-            <img
-              src="https://img.freepik.com/premium-vector/online-shop-neon-signs-vector-design-template-neon-style_77399-1178.jpg" 
               alt="Dresses"
               className="category-image"
             />
-            <p>Dresses</p>
+            <p>Bottoms</p>
           </div>
           <div className="category-item">
             <img
@@ -63,7 +63,7 @@ const HomePage = () => {
               alt="Jeans"
               className="category-image"
             />
-            <p>Jeans</p>
+            <p>Shoes</p>
           </div>
           <div className="category-item">
             <img
@@ -71,7 +71,7 @@ const HomePage = () => {
               alt="Dresses"
               className="category-image"
             />
-            <p>Dresses</p>
+            <p>Matching Sets</p>
           </div>
         </div>
 

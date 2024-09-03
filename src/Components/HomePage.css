@@ -28,7 +28,7 @@
   font-size: 48px;
   margin: 0;
   color: #f110f1;
-  font-family: 'Cursive', sans-serif;
+  font-family: "Georgia", serif;
   font-style: italic;
 }
 
@@ -36,7 +36,7 @@
   font-size: 24px;
   margin: 10px 0;
   font-weight: 600;
-  font-family: 'Cursive', sans-serif;
+  font-family: "Georgia", serif;
   color: #f110f1;
 }
 .hero-text p {

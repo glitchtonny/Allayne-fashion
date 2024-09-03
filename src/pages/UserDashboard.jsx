@@ -71,7 +71,7 @@ function UserDashboard() {
             </a>
           </li>
           <li>
-            <a href="/cartpage">
+            <a href="/cart">
               <span className="icon">
               <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ function UserDashboard() {
           <div className="profile-details">
             <div>Name: {user.username}</div>
             <div>Email: {user.email}</div>
-            <div>Phone Number: {user.phone_number}</div>
+            {/* <div>Phone Number: {user.phone_number}</div> */}
           </div>
         </div>
         <button className="logout-btn" onClick={handleLogout}>

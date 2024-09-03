@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import './SearchBar.css'; // Create this CSS file for styling
+import './SearchBar.css';
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
 
   const handleSearch = (e) => {
     e.preventDefault();
-    onSearch(query);
+    if (query.trim() === '') {
+      // If the query is empty, refresh the page to reset everything
+      window.location.reload();
+    } else {
+      onSearch(query);
+    }
   };
 
   return (

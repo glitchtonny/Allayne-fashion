@@ -1,36 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './EditProduct.css';
 
 const EditProduct = () => {
     const { productId } = useParams();
     const navigate = useNavigate();
-    const [product, setProduct] = useState({
-        name: '',
-        description: '',
-        price: '',
-        image_url: '',
-        category_id: ''
-    });
+    const [product, setProduct] = useState(null); // Start with `null`
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(true); // Add a loading state
 
     useEffect(() => {
-        // Fetch the current product data to pre-fill the form
         const fetchProduct = async () => {
             try {
                 const response = await fetch(`http://127.0.0.1:5000/products/${productId}`, {
                     headers: {
-                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                        Authorization: `Bearer ${localStorage.getItem('access_token')}`
                     }
                 });
 
                 if (!response.ok) {
-                    throw new Error('Failed to fetch product');
+                    throw new Error(`Failed to fetch product. Status: ${response.status}`);
                 }
 
                 const data = await response.json();
-                setProduct(data.product);
+                setProduct(data); // Assuming the response is the product object directly
             } catch (err) {
+                console.error(err); // Log the error for more details
                 setError(err.message);
+            } finally {
+                setLoading(false); // Stop loading when the request is complete
             }
         };
 
@@ -50,25 +48,37 @@ const EditProduct = () => {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                    Authorization: `Bearer ${localStorage.getItem('access_token')}`
                 },
                 body: JSON.stringify(product)
             });
 
             if (!response.ok) {
-                throw new Error('Failed to update product');
+                throw new Error(`Failed to update product. Status: ${response.status}`);
             }
 
-            navigate('/admin-products'); // Redirect to product list after successful update
+            navigate('/admin-products');
         } catch (err) {
+            console.error(err); // Log the error for more details
             setError(err.message);
         }
     };
 
+    if (loading) {
+        return <div>Loading...</div>; // Show loading message
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>; // Show error message
+    }
+
+    if (!product) {
+        return <div>No product found.</div>; // Handle the case where product is null
+    }
+
     return (
-        <div>
+        <div className="edit-product-container">
             <h1>Edit Product</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>
@@ -90,7 +100,7 @@ const EditProduct = () => {
                     <label>Category ID:</label>
                     <input type="number" name="category_id" value={product.category_id} onChange={handleChange} />
                 </div>
-                <button type="submit">Save</button>
+                <a href="/admin-products"><button type="submit" >Save</button></a>
             </form>
         </div>
     );
