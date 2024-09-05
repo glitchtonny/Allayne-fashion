@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // import './AdminDashboard.css';
 
 function AdminDashboard() {
@@ -23,7 +24,7 @@ function AdminDashboard() {
       <div className="sidebar">
         <ul>
           <li>
-            <a href="/admin-products">
+            <Link to="/admin-products">
               <span className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -40,10 +41,10 @@ function AdminDashboard() {
                 </svg>
               </span>
               Manage Products
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/admin-dashboard/orders">
+            <Link to="/admin-dashboard/orders">
               <span className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +62,10 @@ function AdminDashboard() {
                 </svg>
               </span>
               Manage Orders
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/productform">
+            <Link to="/productform">
               <span className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +82,7 @@ function AdminDashboard() {
                 </svg>
               </span>
               Add Product
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

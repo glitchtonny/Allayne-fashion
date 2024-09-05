@@ -1,11 +1,5 @@
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './UserDashboard.css';
 
 function UserDashboard() {
@@ -30,9 +24,9 @@ function UserDashboard() {
       <div className="sidebar">
         <ul>
           <li>
-            <a href="shop">
+            <Link to="/shop">
               <span className="icon">
-              <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -47,12 +41,12 @@ function UserDashboard() {
                 </svg>
               </span>
               Products
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="/orders">
               <span className="icon">
-              <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -67,13 +61,13 @@ function UserDashboard() {
                   <circle cx="12" cy="7" r="4" />
                 </svg>
               </span>
-              Order
-            </a>
+              Orders
+            </Link>
           </li>
           <li>
-            <a href="/cart">
+            <Link to="/cart">
               <span className="icon">
-              <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -88,9 +82,9 @@ function UserDashboard() {
                   <circle cx="20" cy="21" r="1" />
                   <path d="M1 1h4l.09.27A5.97 5.97 0 0 1 10 7h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2H3" />
                 </svg>
-                </span>
+              </span>
               Cart
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -98,7 +92,7 @@ function UserDashboard() {
         <h1>User Dashboard</h1>
         <div className="profile">
           <div className="profile-img">
-          <svg
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="64"
               height="64"
@@ -117,7 +111,6 @@ function UserDashboard() {
           <div className="profile-details">
             <div>Name: {user.username}</div>
             <div>Email: {user.email}</div>
-            {/* <div>Phone Number: {user.phone_number}</div> */}
           </div>
         </div>
         <button className="logout-btn" onClick={handleLogout}>
