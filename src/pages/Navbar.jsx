@@ -11,7 +11,7 @@ function Navbar({ isLoggedIn }) {
       <Link to="/" className="nav-logo">
       {/* <h4>Allayne</h4> */}
 
-        <img src="src/images/allayne0-removebg-preview.png" alt="Logo" />
+        <img src="src/images/allayne0-removebg-preview.png" alt="ALLAYNE" />
       </Link>
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
