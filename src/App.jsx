@@ -3,6 +3,7 @@ import React, { useState , useEffect} from 'react';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './pages/Navbar';
+import PrivateRoute from './auth/PrivateRoute';
 import ShopAll from './Components/ShopAll';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -28,6 +29,7 @@ function App() {
 
   useEffect(() => {
     const user = localStorage.getItem('user');
+    console.log('User in localStorage:', user);
     if (user) {
       setIsLoggedIn(true);
     } else {
@@ -40,7 +42,12 @@ function App() {
       <Navbar isLoggedIn={isLoggedIn} />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/shop" element={<ShopAll />} />
+          <Route path="/shop" element={
+            <PrivateRoute isLoggedIn={isLoggedIn}>
+                <ShopAll />
+
+            </PrivateRoute>
+            } />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/login" element={<LoginPage />} />

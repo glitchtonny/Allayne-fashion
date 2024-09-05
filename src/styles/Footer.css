@@ -1,69 +1,90 @@
-/* Ensure the footer spans the full width and is fixed at the bottom */
 .footer {
-    /* position: fixed; Fixes the footer at the bottom of the viewport */
-    bottom: 0; /* Aligns it to the bottom */
-    left: 0; /* Aligns it to the left edge */
-    width: 100%; /* Ensures it spans the entire width */
-    background-color: #333; /* Dark background for contrast */
-    color: white;
-    padding: 20px 0; /* Padding for spacing */
-    box-sizing: border-box; /* Ensures padding does not affect the width */
-    z-index: 1000; /* Ensures it stays on top of other content */
-}
-
-/* Ensure the footer container takes full width without limiting it */
-.footer-container {
-    max-width: 1200px; /* Maximum width to center the content */
-    margin: 0 auto; /* Center the container horizontally */
+    background-color: #373844;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  
+  .footer-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; /* Padding to match the navbar */
-}
-
-/* Style for the column containing vertical links */
-.footer-column {
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    
+  }
+  
+  .footer-section {
     flex: 1;
-}
-
-/* Vertical links styling */
-.footer-vertical-links {
+    margin: 10px 20px;
+    min-width: 200px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #f0f0f0;
+  }
+  
+  .footer-section ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-}
-
-.footer-vertical-links li {
+  }
+  
+  .footer-section ul li {
     margin-bottom: 10px;
-}
-
-.footer-vertical-links a {
-    color: white;
+  }
+  
+  .footer-section ul li a {
+    color: #bbb;
     text-decoration: none;
-}
-
-.footer-vertical-links a:hover {
-    text-decoration: underline;
-}
-
-/* Horizontal links styling */
-.footer-horizontal-links {
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #fff;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #bbb;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 5px 0;
+  }
+  
+  .footer-bottom-links {
     list-style: none;
     padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: flex-end;
-}
-
-.footer-horizontal-links li {
-    margin-left: 15px;
-}
-
-.footer-horizontal-links a {
-    color: white;
+    justify-content: center;
+  }
+  
+  .footer-bottom-links li {
+    margin: 0 15px;
+  }
+  
+  .footer-bottom-links li a {
+    color: #bbb;
     text-decoration: none;
-}
-
-.footer-horizontal-links a:hover {
-    text-decoration: underline;
-}
+  }
+  
+  .footer-bottom-links li a:hover {
+    color: #fff;
+  }
+  

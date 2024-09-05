@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/AboutPage.css';  
+import Footer from './Footer';
 
 const AboutPage = () => {
   return (
@@ -35,6 +36,8 @@ const AboutPage = () => {
         <div className="about-image">
         </div>
       </section>
+      <Footer/>
+
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomePage.css";
 import TrendingFits from "./TrendingFits";
+import Footer from "../pages/Footer";
 
 
 const HomePage = () => {
@@ -76,6 +77,7 @@ const HomePage = () => {
         </div>
 
       </div>
+      <Footer/>
 
     </div>
   );

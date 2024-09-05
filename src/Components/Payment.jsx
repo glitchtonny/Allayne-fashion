@@ -29,7 +29,7 @@ const Payment = () => {
                     'http://127.0.0.1:5000/mpesa/stk_push',
                     {
                         phone_number: formData.phone_number,
-                        total_price: total_price,
+                        total_price: 1,
                         order_id: order_id
                     },
                     {

@@ -5,6 +5,7 @@ import Banner from './Banner';
 import SearchBar from './SearchBar';
 import ProductCard from './ProductCard';
 import './ShopAll.css';
+import Footer from '../pages/Footer';
 
 const ShopAll = () => {
   const [categories, setCategories] = useState([]);
@@ -114,6 +115,7 @@ const ShopAll = () => {
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
     </div>
   );

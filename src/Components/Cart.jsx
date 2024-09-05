@@ -115,6 +115,7 @@ const Cart = () => {
       console.error('Error removing cart item:', error);
     }
   };
+  
   return (
     <div className="cart-page">
       <h1>Your Cart</h1>
